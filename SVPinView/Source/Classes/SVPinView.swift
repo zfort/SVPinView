@@ -142,7 +142,6 @@ public class SVPinView: UIView {
     
     private func validateAndSendCallback() {
         let pin = getPin()
-        guard !pin.isEmpty else {return}
         if didFinishCallback != nil {
             didFinishCallback!(pin)
         }
