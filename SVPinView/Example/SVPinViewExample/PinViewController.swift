@@ -36,7 +36,7 @@ class PinViewController: UIViewController {
         pinView.borderLineColor = UIColor.white
         pinView.borderLineThickness = 1
         pinView.shouldSecureText = true
-        pinView.style = .none
+        pinView.style = .underline
         pinView.fieldBackgroundColor = UIColor.white.withAlphaComponent(0.3)
         pinView.fieldCornerRadius = 15
         pinView.placeholder = "******"
@@ -76,7 +76,9 @@ class PinViewController: UIViewController {
     }
     
     @IBAction func clearPin() {
-        pinView.clearPin()
+//        pinView.clearPin()
+        pinView.changeBorderLineColorColor(UIColor.green)
+        pinView.changeTextColor(UIColor.green)
     }
     
     @IBAction func pastePin() {

@@ -210,6 +210,20 @@ public class SVPinView: UIView {
             validateAndSendCallback()
         }
     }
+    
+    public func changeBorderLineColorColor(_ color: UIColor) {
+        for index in (0..<pinLength) {
+            let underLine = collectionView.cellForItem(at: IndexPath(item: index, section: 0))?.viewWithTag(50)
+            underLine?.backgroundColor = color
+        }
+    }
+    
+    public func changeTextColor(_ color: UIColor) {
+        for index in (0..<pinLength) {
+            let textField = collectionView.cellForItem(at: IndexPath(item: index, section: 0))?.viewWithTag(101 + index) as! SVPinField
+            textField.textColor = color
+        }
+    }
 }
 extension SVPinView : UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout
 {
